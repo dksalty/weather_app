@@ -1,7 +1,7 @@
 
-export async function getWeatherData(city) {
+export async function getWeatherData(city, selectedUnit) {
   try {
-    const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=27ZFXJNWL8MLFAZCNDGKVGVNZ`);
+     const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?&unitGroup=${selectedUnit}&key=27ZFXJNWL8MLFAZCNDGKVGVNZ`);
    if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

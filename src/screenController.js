@@ -1,44 +1,43 @@
-import { getWeatherData } from './api.js';
 
-function farenheitToCelsius(fahrenheit) {
-  return (fahrenheit - 32) * 5 / 9;
-}
-export function createWeatherCard(weatherData) {
+
+
+export function createWeatherCard(weatherData, selectedUnit) {
+  const today = weatherData.currentConditions
+  const tomorrow = weatherData.days[1]
+  const dayAfterTomorrow = weatherData.days[2]
+  const threeDaysAfterTomorrow = weatherData.days[3]
+  const fourDaysAfterTomorrow = weatherData.days[4]
+  
   const card = document.createElement('div');
+  card.classList.add('weather-card');
+  const nowDiv = document.createElement('div');
+  nowDiv.textContent = 'Now in ' + weatherData.resolvedAddress.charAt(0).toUpperCase() + weatherData.resolvedAddress.slice(1);
+  card.appendChild(nowDiv);
   const condition = document.createElement('p');
-  condition.textContent = `Condition: ${weatherData.currentConditions.conditions}`;
+  condition.textContent = `${weatherData.currentConditions.conditions}`;
   card.appendChild(condition);
-  const tempContainer = document.createElement('div');
   const temperature = document.createElement('p');
-  temperature.textContent = `Temperature: ${weatherData.currentConditions.temp}°C`;
- 
-  const tempSelect = document.createElement('select');
-  const celsiusOption = document.createElement('option');
-  celsiusOption.value = 'C';
-  celsiusOption.textContent = 'Celsius';
-  tempSelect.appendChild(celsiusOption);
-  const fahrenheitOption = document.createElement('option');
-  fahrenheitOption.value = 'F';
-  fahrenheitOption.textContent = 'Fahrenheit';
-  tempSelect.appendChild(fahrenheitOption);
-  tempContainer.append(temperature, tempSelect);
-  card.appendChild(tempContainer);
+  if (selectedUnit === 'us') {
+    temperature.textContent = `${weatherData.currentConditions.temp}°F`;
+  } else if (selectedUnit === 'metric') {
+    temperature.textContent = `${weatherData.currentConditions.temp}°C`;
+  }
+  card.appendChild(temperature);
   const humidity = document.createElement('p');
   humidity.textContent = `Humidity: ${weatherData.currentConditions.humidity}%`;
   card.appendChild(humidity);
   const windSpeed = document.createElement('p');
-  windSpeed.textContent = `Wind Speed: ${weatherData.currentConditions.windspeed} km/h`;
+  if (selectedUnit === 'us') {
+    windSpeed.textContent = `Wind Speed: ${weatherData.currentConditions.windspeed} mph`;
+  } else if (selectedUnit === 'metric') { 
+  windSpeed.textContent = `Wind Speed: ${weatherData.currentConditions.windspeed} km/h`;    
+  }
   card.appendChild(windSpeed);
   const icon = document.createElement('img');
   icon.src = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/1st%20Set%20-%20Color/${weatherData.currentConditions.icon}.png`;
   card.appendChild(icon);
   card.classList.add('weather-card');
   return card;
-  if (tempSelect.value === 'F') {
-    temperature.textContent = `Temperature: ${weatherData.currentConditions.temp}°F`;
-  }
-  else {
-    temperature.textContent = `Temperature: ${farenheitToCelsius(weatherData.currentConditions.temp)}°C`;
-  }
+  
 }
 

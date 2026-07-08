@@ -12,15 +12,16 @@
             <label for="city">Enter a city:</label>
             <input type="text" id="city" name="city" required>
             <button type="submit" id="getWeatherButton">Get Weather</button>
+            <input type="radio" id="us" name="unit" value="us" checked>
+            <label for="us">US</label>
+            <input type="radio" id="metric" name="unit" value="metric">
+            <label for="metric">Metric</label>
+            
         </form>
     </header>
     <main>
         <div id ="weather-container">
-           <card id="weatherCard" class="weather-card">
-                <h2 id="cityName"></h2>
-                <p id="temperature"></p>
-                <p id="description"></p>
-            </card>
+           
         </div>
     </main>
 </body>
