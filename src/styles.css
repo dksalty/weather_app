@@ -3,13 +3,9 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-}
-.temp-container {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    margin: 0;
-    align-items: center;
+    width: 50vw;
+    margin: 0 auto;
+    background-color: #aed0d4;
 }
 .temp-select {
     height: 1.5em;
@@ -22,17 +18,68 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 20em;
-    height: 20em;
+    width: 100%;
+    height: 50%;
     border-radius: 1em;
     background-color: #f0f0f0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 2em;
+    margin-top: 0;
     align-self: center;
+    
 }
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 50vh;
+}
+#forecast-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+.forecast-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 1em;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#weather-form {
+    margin-bottom: 2px;
+}
+#weather-container {
+    display: flex;
+    width: 500px; 
+    
+    flex-direction: column;
+    font-weight: bold;
+}
+header {
+    display: flex;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+.form-label {
+    font-weight: bold;
+}
+#getWeatherButton {
+    margin-bottom: 5px;
+}
+p {
+  margin: 10px;
+}
+.now-div {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+hl {
+    margin-bottom: 10px;
 }

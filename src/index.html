@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+
 </head>
 <body>
     <header>
         <h1>What's the weather?</h1>
         <form id="weather-form">
-            <label for="city">Enter a city:</label>
+            <div class="form-label">Enter a location:</div>
             <input type="text" id="city" name="city" required>
-            <button type="submit" id="getWeatherButton">Get Weather</button>
-            <input type="radio" id="us" name="unit" value="us" checked>
+            <br>
+             <input type="radio" id="us" name="unit" value="us" checked>
             <label for="us">US</label>
             <input type="radio" id="metric" name="unit" value="metric">
             <label for="metric">Metric</label>
-            
-        </form>
+            <br>
+            <button type="submit" id="getWeatherButton">Get Weather</button>
+         </form>
     </header>
     <main>
         <div id ="weather-container">
-           
+            <div id="weather-card"></div>
+            <div id="forecast-container"></div>
         </div>
+        
     </main>
 </body>
 </html>
