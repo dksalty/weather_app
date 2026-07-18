@@ -1,6 +1,3 @@
-
-
-
 export function createWeatherCard(processedWeatherData, selectedUnit, city) {
 const {resolvedAddressData, conditionData, tempData, feelsLikeData, humidityData, windSpeedData, iconData} = processedWeatherData;
 
@@ -14,7 +11,7 @@ const {resolvedAddressData, conditionData, tempData, feelsLikeData, humidityData
   icon.src = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/1st%20Set%20-%20Color/${iconData}.png`;
   card.appendChild(icon);
   const condition = document.createElement('p');
-  condition.textContent = `${condition}`;
+  condition.textContent = `${conditionData}`;
   card.appendChild(condition);
   const temperature = document.createElement('p');
   if (selectedUnit === 'us') {
@@ -45,7 +42,7 @@ const {resolvedAddressData, conditionData, tempData, feelsLikeData, humidityData
   return card;
   
 }
-export function createForecastCard(selectedUnit, processedForecastData, day){
+export function createForecastCard(selectedUnit, processedForecastData){
   const {forecastDateData, forecastTempData, forecastIconData} = processedForecastData;
   const date = new Date(forecastDateData);
   const forecastCard = document.createElement('div');

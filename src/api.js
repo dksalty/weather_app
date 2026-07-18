@@ -1,3 +1,5 @@
+import { createForecastCard } from "./screenController.js";
+
 export { processWeatherData, processForecastData };
 export async function WeatherData(city, selectedUnit) {
   
@@ -15,9 +17,6 @@ export async function WeatherData(city, selectedUnit) {
     console.error('Error fetching weather data:', error);
     throw error;
   }
-
-
-  
 }
 function processWeatherData(getWeatherData) {
   const rawWeatherData = {   
@@ -32,14 +31,14 @@ function processWeatherData(getWeatherData) {
     return rawWeatherData; 
   };
   
+function processForecastData(getWeatherData) {
+  const rawForecastData =
+ getWeatherData.days.map(day => ({
+  forecastDateData: day.datetime,
+  forecastTempData: day.temp,
+  forecastIconData: day.icon,
 
-
- function processForecastData(WeatherData, day) {
-  const rawForecastData = {
-  forecastDateData: WeatherData.days[day].datetime,
-  forecastTempData: WeatherData.days[day].temp,
-  forecastIconData: WeatherData.days[day].icon
-  }
+  }))
   return rawForecastData;
 }
 

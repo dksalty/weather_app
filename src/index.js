@@ -14,12 +14,12 @@ async function handleWeatherFormSubmit(e) {
   const selectedUnit = Array.from(unitRadios).find(radio => radio.checked).value;
 const getWeatherData = await WeatherData(city, selectedUnit);
  const processedWeatherData = processWeatherData(getWeatherData);
-  const processedForecastData = processForecastData(getWeatherData, 2);
+  const processedForecastData = processForecastData(getWeatherData);
    const weatherCard = createWeatherCard(processedWeatherData, selectedUnit, city);
   weatherContainer.textContent = '';
   forecastContainer.textContent = '';
-   for (let i = 2; i <= 7; i++) {
-    const forecastCard = createForecastCard(selectedUnit, processedForecastData, i);
+   for (let i = 1; i <= 6; i++) {
+    const forecastCard = createForecastCard(selectedUnit, processedForecastData[i]);
     forecastContainer.appendChild(forecastCard);
   }
 weatherContainer.append(weatherCard, forecastContainer, selectedUnit, city);
