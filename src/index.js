@@ -22,7 +22,7 @@ const getWeatherData = await WeatherData(city, selectedUnit);
     const forecastCard = createForecastCard(selectedUnit, processedForecastData[i]);
     forecastContainer.appendChild(forecastCard);
   }
-weatherContainer.append(weatherCard, forecastContainer, selectedUnit, city);
+weatherContainer.append(weatherCard, forecastContainer);
 };
 weatherForm.addEventListener('submit', handleWeatherFormSubmit);
 

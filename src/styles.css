@@ -25,7 +25,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 0;
     align-self: center;
-    
+    margin-bottom: 5px;
+    border: 2px solid black;
 }
 main {
     display: flex;
@@ -34,10 +35,10 @@ main {
     height: 50vh;
 }
 #forecast-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
+   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  
+
 }
 .forecast-card {
     display: flex;
@@ -48,16 +49,18 @@ main {
     border-radius: 1em;
     background-color: #f0f0f0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid black;
+    font-size: auto;
 }
 #weather-form {
     margin-bottom: 2px;
 }
 #weather-container {
     display: flex;
-    width: 500px; 
-    
+    width: 80vw; 
     flex-direction: column;
     font-weight: bold;
+    margin-top: 2px;
 }
 header {
     display: flex;

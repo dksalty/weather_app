@@ -37,7 +37,6 @@ const {resolvedAddressData, conditionData, tempData, feelsLikeData, humidityData
   windSpeed.textContent = `Wind Speed: ${windSpeedData} km/h`;    
   }
   card.appendChild(windSpeed);
- 
   card.classList.add('weather-card');
   return card;
   
@@ -58,6 +57,7 @@ export function createForecastCard(selectedUnit, processedForecastData){
   }
   forecastCard.appendChild(forecastTemp);
    const forecastIcon = document.createElement('img');
+  forecastIcon.classList.add('forecastIcon');
   forecastIcon.src = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/1st%20Set%20-%20Color/${forecastIconData}.png`;
   forecastCard.appendChild(forecastIcon);
   return forecastCard;
