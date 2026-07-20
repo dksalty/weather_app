@@ -62,3 +62,11 @@ export function createForecastCard(selectedUnit, processedForecastData){
   forecastCard.appendChild(forecastIcon);
   return forecastCard;
 }
+export function showLoading() {
+  const loadingText = document.createElement('p');
+  loadingText.textContent = "Loading weather..."
+  weatherContainer.appendChild(loadingText);
+}
+export function hideLoading() {
+weatherContainer.remove(loadingText)
+}

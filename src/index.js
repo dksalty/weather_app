@@ -18,7 +18,7 @@ const getWeatherData = await WeatherData(city, selectedUnit);
    const weatherCard = createWeatherCard(processedWeatherData, selectedUnit, city);
   weatherContainer.textContent = '';
   forecastContainer.textContent = '';
-   for (let i = 1; i <= 6; i++) {
+   for (let i = 2; i <= 7; i++) {
     const forecastCard = createForecastCard(selectedUnit, processedForecastData[i]);
     forecastContainer.appendChild(forecastCard);
   }
