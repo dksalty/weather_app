@@ -3,7 +3,6 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    
     margin: 0 auto;
     background-color: #aed0d4;
     flex-wrap: nowrap;
@@ -20,7 +19,6 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    
     border-radius: 1em;
     background-color: #f0f0f0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -33,13 +31,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-   
 }
 #forecast-container {
    display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  
-
 }
 .forecast-card {
     display: flex;
@@ -51,8 +46,6 @@ main {
     background-color: #f0f0f0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 2px solid black;
-    
-    
 }
 #weather-form {
     margin-bottom: 2px;
@@ -63,7 +56,7 @@ main {
     max-width: 900px;
     flex-direction: column;
     font-weight: bold;
-    margin-top: 2px;
+    margin: 10px;
 }
 header {
     display: flex;
@@ -88,5 +81,9 @@ p {
 }
 hl {
     margin-bottom: 10px;
+}
+.error-message {
+color: red;
+font-weight: bold;
 }
 

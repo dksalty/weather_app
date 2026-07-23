@@ -1,6 +1,5 @@
 export function createWeatherCard(processedWeatherData, selectedUnit, city) {
-const {resolvedAddressData, conditionData, tempData, feelsLikeData, humidityData, windSpeedData, iconData} = processedWeatherData;
-
+  const {resolvedAddressData, conditionData, tempData, feelsLikeData, humidityData, windSpeedData, iconData} = processedWeatherData;
   const card = document.createElement('div');
   card.classList.add('weather-card');
   const nowDiv = document.createElement('div');
@@ -39,15 +38,15 @@ const {resolvedAddressData, conditionData, tempData, feelsLikeData, humidityData
   card.appendChild(windSpeed);
   card.classList.add('weather-card');
   return card;
-  
-}
+ }
 export function createForecastCard(selectedUnit, processedForecastData){
   const {forecastDateData, forecastTempData, forecastIconData} = processedForecastData;
-  const date = new Date(forecastDateData);
+  const date = new Date(forecastDateData * 1000);
   const forecastCard = document.createElement('div');
   forecastCard.classList.add('forecast-card');
   const forecastDate = document.createElement('p');
-  forecastDate.textContent = `${date.toLocaleDateString("en-US", { weekday: 'short' })}`;
+  forecastDate.textContent = `${date.toLocaleDateString("en-US", { weekday: 'short',  month: "numeric",
+  day: "numeric"})}`;
   forecastCard.appendChild(forecastDate);
   const forecastTemp = document.createElement('p');
   if (selectedUnit === 'us') {
@@ -61,12 +60,17 @@ export function createForecastCard(selectedUnit, processedForecastData){
   forecastIcon.src = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/1st%20Set%20-%20Color/${forecastIconData}.png`;
   forecastCard.appendChild(forecastIcon);
   return forecastCard;
-}
-export function showLoading() {
+  }
+export function showLoading(weatherContainer) {
   const loadingText = document.createElement('p');
+  loadingText.classList.add('loadingText')
   loadingText.textContent = "Loading weather..."
   weatherContainer.appendChild(loadingText);
 }
 export function hideLoading() {
-weatherContainer.remove(loadingText)
+  const elementToRemove = document.querySelector('.loadingText');
+  if (elementToRemove) {
+    elementToRemove.remove();
+  }
 }
+
