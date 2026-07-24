@@ -1,6 +1,6 @@
 import './styles.css';
 import { createWeatherCard, createForecastCard, showLoading, hideLoading} from './screenController.js';
-import {WeatherData, processWeatherData, processForecastData} from './api.js';
+import {WeatherData, processWeatherData, processForecastData, loadBackground} from './api.js';
 const cityInput = document.getElementById('city');
 const weatherForm = document.getElementById('weather-form');
 const unitRadios = document.getElementsByName('unit');
@@ -16,6 +16,8 @@ async function handleWeatherFormSubmit(e) {
   const processedWeatherData = processWeatherData(weatherData);
   const processedForecastData = processForecastData(weatherData);
   const weatherCard = createWeatherCard(processedWeatherData, selectedUnit, city);
+  const imageUrl = await loadBackground(processedWeatherData.iconData);
+  document.body.style.backgroundImage = `url('${imageUrl}')`;
   weatherContainer.textContent = '';
   forecastContainer.textContent = '';
    for (let i = 0; i < processedForecastData.length; i++) {

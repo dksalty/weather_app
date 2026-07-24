@@ -37,21 +37,24 @@ function processForecastData(getWeatherData) {
 }))
   return rawForecastData;
 }
-async function loadBackground(condition, processWeatherData) {
+async function loadBackground(icon) {
   try {
     const ACCESS_KEY = "iwmG2Tpvndj_Z6zTFnzBWe1kahTvclZA7YzdrNgyfcM"
-    const searchTerm = processWeatherData.iconData;
+    const searchTerm = icon;
     const response = await fetch(`https://api.unsplash.com/photos/random?query=${searchTerm}&client_id=${ACCESS_KEY}`);
-
+  
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
     const imageData = await response.json();
-
-    // Set background image
+    const imageUrl = imageData.urls.regular; 
+    return imageUrl;
+  
   } catch (error) {
     console.error(error);
   }
+  
 }
+  
 
