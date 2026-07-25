@@ -38,9 +38,23 @@ function processForecastData(getWeatherData) {
   return rawForecastData;
 }
 async function loadBackground(icon) {
+  const searchTerms = {
+  "clear-day": "clear blue sky",
+  "clear-night": "starry night sky",
+  "partly-cloudy-day": "partly cloudy sky",
+  "partly-cloudy-night": "cloudy night sky",
+  "cloudy": "overcast sky",
+  "rain": "rain clouds sky",
+  "snow": "snowy sky",
+  "fog": "foggy sky",
+  "wind": "windy sky",
+  "thunder-rain": "thunderstorm sky",
+  "thunder-showers-day": "thunderstorm sky",
+  "thunder-showers-night": "thunderstorm night sky"
+};
   try {
     const ACCESS_KEY = "iwmG2Tpvndj_Z6zTFnzBWe1kahTvclZA7YzdrNgyfcM"
-    const searchTerm = icon;
+    const searchTerm = searchTerms[icon] || "sky";
     const response = await fetch(`https://api.unsplash.com/photos/random?query=${searchTerm}&client_id=${ACCESS_KEY}`);
   
     if (!response.ok) {

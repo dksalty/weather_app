@@ -65,20 +65,22 @@ main {
 }
 header {
     display: flex;
-    margin-bottom: 20px;
-    background-color: #fff;
+    background-color: #f0f0f0;
     flex-direction: column;
     width:50vw;
+    max-width: 400px;
     align-self: center;
     border-radius: 1em;
-    margin-bottom: 0;
     opacity: 30;
+    border: 2px solid black;
+    padding: 0;
 }
 .form-label {
     font-weight: bold;
 }
 #getWeatherButton {
     margin-bottom: 5px;
+    background-color: lightgrey;
 }
 p {
   margin: 10px;
@@ -89,11 +91,17 @@ p {
     margin-bottom: 10px;
     margin-top: 10px;
 }
-hl {
+.weatherTitle {
    margin: 0;
 }
 .error-message {
 color: red;
 font-weight: bold;
+}
+#city {
+    border: 2px solid black;
+    margin: 3px;
+    font-size: 1.5em;
+    width: 95%;
 }
 
