@@ -81,6 +81,9 @@ header {
 #getWeatherButton {
     margin-bottom: 5px;
     background-color: lightgrey;
+    width: 70%;
+    height: 40px;
+    font-weight: bold;
 }
 p {
   margin: 10px;
@@ -102,6 +105,6 @@ font-weight: bold;
     border: 2px solid black;
     margin: 3px;
     font-size: 1.5em;
-    width: 95%;
+    width: 90%;
 }
 
