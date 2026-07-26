@@ -5,19 +5,19 @@ A responsive weather application built with JavaScript that displays current wea
 Live Demo: https://dksalty.github.io/weather_app/
 
 Features:
-Search weather by city
-Current weather conditions
-15-day forecast
-Dynamic weather backgrounds from Unsplash
-Switch between U.S. and Metric units
-Loading indicator while fetching data
-Responsive design for desktop and mobile
-Error handling for invalid searches or network issues
+- Search weather by city
+- Current weather conditions
+- 15-day forecast
+- Dynamic weather backgrounds from Unsplash
+- Switch between U.S. and Metric units
+- Loading indicator while fetching data
+- Responsive design for desktop and mobile
+- Error handling for invalid searches or network issues
 
 Built With:
-JavaScript (ES6 Modules)
-HTML5
-CSS3
-Webpack
-Visual Crossing Weather API
-Unsplash API
+- JavaScript (ES6 Modules)
+- HTML5
+- CSS3
+- Webpack
+- Visual Crossing Weather API
+- Unsplash API
