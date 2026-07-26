@@ -8,6 +8,7 @@ export default {
     filename: "main.js",
     path: path.resolve(process.cwd(), "dist"),
     clean: true,
+    publicPath: "./"
   },
   plugins: [
     new HtmlWebpackPlugin({
